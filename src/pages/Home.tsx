@@ -166,7 +166,7 @@ export default function Home() {
         title="Flawless movement from A to B."
         description="Whether you've purchased a vehicle online, need a classic car relocated, or require commercial fleet movements, our pristine transport fleet ensures secure, timely delivery across the United Kingdom."
         features={["Fully insured loading", "Enclosed options available", "Real-time updates"]}
-        image=""
+        image="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783020033/4_Image_dsdozz.webp"
         align="right"
       />
       <ServiceDeepDive 
@@ -174,7 +174,7 @@ export default function Home() {
         title="Immediate response when you need it most."
         description="A breakdown is stressful enough. Our recovery team aims to remove that stress immediately. We offer rapid-response 24/7 recovery services, ensuring you and your vehicle are brought to safety."
         features={["24/7 Availability", "Rapid dispatch", "Safe passenger transport"]}
-        image=""
+        image="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783020032/5_Image_lg7gdz.webp"
         align="left"
       />
       <ServiceDeepDive 
@@ -182,7 +182,7 @@ export default function Home() {
         title="A radically simple way to sell your car."
         description="Forget negotiating with strangers or hidden fees from automated buying sites. We offer honest, fair market valuations and fast payment. We'll even collect the vehicle directly from your driveway."
         features={["Instant valuation", "Same-day payments", "Free home collection"]}
-        image=""
+        image="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783020018/3_Image_athld4.webp"
         align="right"
       />
 
@@ -244,7 +244,7 @@ export default function Home() {
           </div>
           <div className="lg:w-1/2 relative h-[500px] w-full bg-charcoal-950 rounded-2xl border border-white/10 overflow-hidden flex items-center justify-center group pointer-events-none">
              <img 
-               src="" 
+               src="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783020577/6_image_emgcrp.webp" 
                alt="AI-generated UK coverage map artwork" 
                className="w-full h-full object-cover rounded-2xl"
                loading="lazy"

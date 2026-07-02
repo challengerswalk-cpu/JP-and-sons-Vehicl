@@ -27,7 +27,7 @@ export default function Areas() {
         "@type": "ListItem",
         "position": 2,
         "name": "Areas We Cover",
-        "item": "https://www.jpsonsvehicletransport.co.uk/areas"
+        "item": "https://www.jpsonsvehicletransport.co.uk/areas-we-cover"
       }
     ]
   };
@@ -37,7 +37,7 @@ export default function Areas() {
       <SEO 
         title="Areas We Cover | High Wycombe, Buckinghamshire & UK | JP & Sons"
         description="Local vehicle transport and recovery in High Wycombe, Marlow, Beaconsfield, Maidenhead, Slough, Reading, Oxford, London, plus nationwide coverage."
-        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/areas"
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/areas-we-cover"
         schema={[globalLocalBusinessSchema, breadcrumbSchema]}
       />
       
@@ -117,7 +117,7 @@ export default function Areas() {
             While we pride ourselves on our local response, our logistics network spans the entirety of the United Kingdom. We run weekly scheduled multi-vehicle transporters to the North, Scotland, and Wales.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/nationwide" className="inline-flex h-14 items-center justify-center rounded bg-charcoal-900 border border-white/10 px-8 font-medium text-white transition-all hover:bg-charcoal-800 hover:border-white/30">
+            <Link to="/nationwide-transport" className="inline-flex h-14 items-center justify-center rounded bg-charcoal-900 border border-white/10 px-8 font-medium text-white transition-all hover:bg-charcoal-800 hover:border-white/30">
               Discover Nationwide Transport
             </Link>
             <Link to="/contact" className="inline-flex h-14 items-center justify-center rounded bg-jpred-600 px-8 font-medium text-white transition-all hover:bg-jpred-500 gap-2">

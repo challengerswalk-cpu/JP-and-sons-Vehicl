@@ -24,8 +24,8 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/areas" element={<Areas />} />
-              <Route path="/nationwide" element={<Nationwide />} />
+              <Route path="/areas-we-cover" element={<Areas />} />
+              <Route path="/nationwide-transport" element={<Nationwide />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>

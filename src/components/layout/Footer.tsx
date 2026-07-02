@@ -40,15 +40,14 @@ export default function Footer() {
               <li><Link to="/services" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Vehicle Transport</Link></li>
               <li><Link to="/services" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Breakdown Recovery</Link></li>
               <li><Link to="/services" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">We Buy Cars</Link></li>
-              <li><Link to="/nationwide" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Nationwide Delivery</Link></li>
+              <li><Link to="/nationwide-transport" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Nationwide Delivery</Link></li>
             </ul>
           </div>
-
           <div>
             <h4 className="text-[10px] uppercase tracking-widest text-gray-500 mb-6 font-semibold">Company</h4>
             <ul className="flex flex-col gap-4">
               <li><Link to="/" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">About Us</Link></li>
-              <li><Link to="/areas" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Areas We Cover</Link></li>
+              <li><Link to="/areas-we-cover" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Areas We Cover</Link></li>
               <li><Link to="/contact" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Contact</Link></li>
               <li><Link to="#" className="text-xs font-medium text-gray-300 hover:text-jpred-500 transition-colors">Privacy Policy</Link></li>
             </ul>

@@ -23,8 +23,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: 'Areas We Cover', path: '/areas' },
-    { name: 'Nationwide Transport', path: '/nationwide' },
+    { name: 'Areas We Cover', path: '/areas-we-cover' },
+    { name: 'Nationwide Transport', path: '/nationwide-transport' },
     { name: 'Contact', path: '/contact' },
   ];
 

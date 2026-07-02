@@ -310,7 +310,7 @@ export default function Home() {
                 + Nationwide
               </span>
             </div>
-            <Link to="/areas" className="inline-flex items-center gap-2 text-white font-medium hover:text-jpred-500 transition-colors group">
+            <Link to="/areas-we-cover" className="inline-flex items-center gap-2 text-white font-medium hover:text-jpred-500 transition-colors group">
               View all coverage areas
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </Link>

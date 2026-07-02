@@ -20,7 +20,7 @@ export default function Nationwide() {
         "@type": "ListItem",
         "position": 2,
         "name": "Nationwide Transport",
-        "item": "https://www.jpsonsvehicletransport.co.uk/nationwide"
+        "item": "https://www.jpsonsvehicletransport.co.uk/nationwide-transport"
       }
     ]
   };
@@ -41,7 +41,7 @@ export default function Nationwide() {
       <SEO 
         title="Nationwide Vehicle Transport | UK Car Delivery | JP & Sons"
         description="Professional nationwide vehicle transport, car collection service, and long distance door-to-door vehicle delivery across the UK."
-        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/nationwide"
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/nationwide-transport"
         schema={[globalLocalBusinessSchema, breadcrumbSchema, serviceSchema]}
       />
       

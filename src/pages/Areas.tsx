@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, ShieldCheck, Clock, Map as MapIcon, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/seo/SEO';
+import { globalLocalBusinessSchema } from '../utils/seo-schemas';
 
 export default function Areas() {
   const localAreas = [
@@ -11,8 +13,33 @@ export default function Areas() {
     "Luton", "London"
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jpsonsvehicletransport.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Areas We Cover",
+        "item": "https://www.jpsonsvehicletransport.co.uk/areas"
+      }
+    ]
+  };
+
   return (
     <div className="bg-charcoal-950 font-sans text-white min-h-screen pt-24 font-light">
+      <SEO 
+        title="Areas We Cover | High Wycombe, Buckinghamshire & UK | JP & Sons"
+        description="Local vehicle transport and recovery in High Wycombe, Marlow, Beaconsfield, Maidenhead, Slough, Reading, Oxford, London, plus nationwide coverage."
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/areas"
+        schema={[globalLocalBusinessSchema, breadcrumbSchema]}
+      />
       
       <section className="py-20 px-6 lg:px-12 relative overflow-hidden bg-charcoal-900 border-b border-white/10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-jpred-600/10 to-transparent pointer-events-none"></div>

@@ -2,10 +2,48 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Map, Zap, CheckCircle2, Truck, Calendar, ShieldCheck, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/seo/SEO';
+import { globalLocalBusinessSchema } from '../utils/seo-schemas';
 
 export default function Nationwide() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jpsonsvehicletransport.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Nationwide Transport",
+        "item": "https://www.jpsonsvehicletransport.co.uk/nationwide"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Nationwide Vehicle Transport",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "JP & Sons Vehicle Transport"
+    },
+    "areaServed": { "@type": "Country", "name": "United Kingdom" }
+  };
+
   return (
     <div className="bg-charcoal-950 font-sans text-white min-h-screen pt-24 font-light">
+      <SEO 
+        title="Nationwide Vehicle Transport | UK Car Delivery | JP & Sons"
+        description="Professional nationwide vehicle transport, car collection service, and long distance door-to-door vehicle delivery across the UK."
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/nationwide"
+        schema={[globalLocalBusinessSchema, breadcrumbSchema, serviceSchema]}
+      />
       
       {/* Hero */}
       <section className="py-20 px-6 lg:px-12 relative overflow-hidden bg-charcoal-900 border-b border-white/10">

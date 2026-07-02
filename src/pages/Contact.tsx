@@ -1,9 +1,52 @@
 import React from 'react';
 import { Phone, Mail, MapPin, MessageSquare, Send } from 'lucide-react';
+import SEO from '../components/seo/SEO';
+import { globalLocalBusinessSchema } from '../utils/seo-schemas';
 
 export default function Contact() {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "JP & Sons Vehicle Transport",
+      "telephone": "07814 177622",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "High Wycombe",
+        "addressRegion": "Buckinghamshire",
+        "addressCountry": "UK"
+      }
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jpsonsvehicletransport.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact Us",
+        "item": "https://www.jpsonsvehicletransport.co.uk/contact"
+      }
+    ]
+  };
+
   return (
     <div className="bg-charcoal-950 font-sans text-white min-h-screen pt-24 font-light overflow-x-hidden">
+      <SEO 
+        title="Contact JP & Sons | Vehicle Transport & Recovery High Wycombe"
+        description="Contact us for an instant quote, vehicle transport in High Wycombe, 24/7 breakdown recovery, or if you want to sell your car. Available nationwide."
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/contact"
+        schema={[globalLocalBusinessSchema, contactPageSchema, breadcrumbSchema]}
+      />
       
       <section className="py-20 px-6 lg:px-12 relative overflow-hidden bg-charcoal-900 border-b border-white/10">
         <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-jpred-600/10 to-transparent pointer-events-none"></div>

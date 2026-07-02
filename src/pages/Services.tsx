@@ -2,10 +2,51 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Banknote, CarFront } from 'lucide-react';
+import SEO from '../components/seo/SEO';
+import { globalLocalBusinessSchema } from '../utils/seo-schemas';
 
 export default function Services() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": ["Vehicle Transport", "Breakdown Recovery", "Car Buying"],
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "JP & Sons Vehicle Transport"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "High Wycombe" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jpsonsvehicletransport.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.jpsonsvehicletransport.co.uk/services"
+      }
+    ]
+  };
+
   return (
     <div className="bg-charcoal-950 font-sans text-white min-h-screen pt-24 font-light">
+      <SEO 
+        title="Vehicle Transport, Recovery & Car Buying Services | JP & Sons"
+        description="Explore our core services: nationwide vehicle transport, fast 24/7 breakdown recovery, and simple car buying. High Wycombe based, UK coverage."
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/services"
+        schema={[globalLocalBusinessSchema, serviceSchema, breadcrumbSchema]}
+      />
       {/* Hero */}
       <section className="py-20 px-6 lg:px-12 relative overflow-hidden bg-charcoal-900 border-b border-white/10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-jpred-600/10 to-transparent pointer-events-none"></div>

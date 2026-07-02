@@ -6,6 +6,8 @@ import {
   ArrowRight, ShieldCheck, MapPin, Zap, Clock, 
   Map, Phone, Star, ChevronDown, CheckCircle2, MessageSquare
 } from 'lucide-react';
+import SEO from '../components/seo/SEO';
+import { globalLocalBusinessSchema, globalWebsiteSchema, globalOrganizationSchema } from '../utils/seo-schemas';
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -17,8 +19,72 @@ export default function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.jpsonsvehicletransport.co.uk/"
+    }]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are my vehicles insured during transport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely. We carry comprehensive motor trade and goods in transit insurance. Your vehicle is fully covered from the moment we take the keys until delivery is signed for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you respond to a breakdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In our core coverage areas (Buckinghamshire, Berkshire, London borders), we aim to be with you within 45-60 minutes depending on traffic. Nationwide recoveries are scheduled based on availability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you transport non-running vehicles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our recovery trucks and transport trailers are equipped with winches to safely load and unload non-running vehicles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you value cars you buy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We use real-time market data alongside a physical appraisal. Because we are an independent business, we don't have massive overheads, allowing us to often beat automated valuation sites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do long-distance transport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer nationwide transport services covering England, Scotland, and Wales."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="bg-charcoal-950 font-sans text-white">
+      <SEO 
+        title="Vehicle Transport & Breakdown Recovery High Wycombe | JP & Sons"
+        description="Fast, reliable vehicle transport, 24/7 breakdown recovery, and hassle-free car buying in High Wycombe, Buckinghamshire and nationwide. Contact JP & Sons today."
+        canonicalUrl="https://www.jpsonsvehicletransport.co.uk/"
+        schema={[globalLocalBusinessSchema, globalWebsiteSchema, globalOrganizationSchema, breadcrumbSchema, faqSchema]}
+      />
       {/* SECTION 1: Cinematic Hero Experience */}
       <section ref={heroRef} className="relative min-h-[100svh] flex items-center overflow-hidden pt-32 pb-16">
         <motion.div 
@@ -29,8 +95,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-charcoal-950/50 z-10"></div>
           <img 
             src="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783011868/JP_Hero_IMage_qf0bvf.webp" 
-            alt="Vehicle Transport Services"
+            alt="Flatbed tow truck recovering a classic sports car on a scenic road"
+            title="Professional Vehicle Transport and Breakdown Recovery"
             className="w-full h-full object-cover"
+            loading="eager"
+            width="1920"
+            height="1080"
           />
         </motion.div>
 
@@ -146,9 +216,12 @@ export default function Home() {
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-charcoal-800 border border-white/5 flex items-center justify-center">
               <img 
                 src="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783019689/2_Image_xwplfk.webp" 
-                alt="Professional driver checking vehicle"
+                alt="Professional driver checking vehicle condition before loading onto transport truck"
+                title="Secure Vehicle Loading by Professional Driver"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
+                width="800"
+                height="1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 z-10">
@@ -245,9 +318,12 @@ export default function Home() {
           <div className="lg:w-1/2 relative h-[500px] w-full bg-charcoal-950 rounded-2xl border border-white/10 overflow-hidden flex items-center justify-center group pointer-events-none">
              <img 
                src="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783020577/6_image_emgcrp.webp" 
-               alt="AI-generated UK coverage map artwork" 
+               alt="UK Map highlighting our nationwide vehicle transport coverage" 
+               title="Nationwide Vehicle Transport Coverage Map"
                className="w-full h-full object-cover rounded-2xl"
                loading="lazy"
+               width="800"
+               height="500"
              />
           </div>
         </div>
@@ -357,7 +433,15 @@ function ServicePanel({ number, title, subtitle, image, link, action }: any) {
     <Link to={link} className="flex-1 border-b md:border-b-0 md:border-r border-white/10 relative group transition-all duration-700 cursor-pointer overflow-hidden min-h-[400px]">
       <div className="absolute inset-0 z-0 overflow-hidden">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+          <img 
+            src={image} 
+            alt={title} 
+            title={title}
+            loading="lazy"
+            width="600"
+            height="400"
+            className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+          />
         ) : (
           <div className="w-full h-full bg-charcoal-900"></div>
         )}
@@ -422,7 +506,15 @@ function DeepDiveImage({ src, alt }: { src: string, alt: string }) {
     <div className="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden group bg-charcoal-900 flex items-center justify-center border border-white/5">
       <div className="absolute inset-0 bg-charcoal-800 animate-pulse -z-10"></div>
       {src ? (
-        <img src={src} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+        <img 
+          src={src} 
+          alt={alt} 
+          title={alt}
+          loading="lazy"
+          width="800"
+          height="600"
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+        />
       ) : (
         <span className="text-gray-600 font-medium text-sm">Image Placeholder</span>
       )}

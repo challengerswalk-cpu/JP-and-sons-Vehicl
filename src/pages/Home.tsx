@@ -2,25 +2,10 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import { 
   ArrowRight, ShieldCheck, MapPin, Zap, Clock, 
   Map, Phone, Star, ChevronDown, CheckCircle2, MessageSquare
 } from 'lucide-react';
-
-const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json";
-
-const markers = [
-  { name: "London", coordinates: [-0.1278, 51.5074] },
-  { name: "Manchester", coordinates: [-2.2426, 53.4808] },
-  { name: "Leeds", coordinates: [-1.5491, 53.7997] },
-  { name: "Edinburgh", coordinates: [-3.1883, 55.9533] },
-  { name: "High Wycombe", coordinates: [-0.7495, 51.6286], isMain: true },
-  { name: "Birmingham", coordinates: [-1.8904, 52.4862] },
-  { name: "Bristol", coordinates: [-2.5879, 51.4545] },
-  { name: "Glasgow", coordinates: [-4.2518, 55.8642] },
-  { name: "Cardiff", coordinates: [-3.1791, 51.4816] }
-];
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -253,69 +238,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="lg:w-1/2 relative h-[500px] w-full bg-charcoal-950 rounded-2xl border border-white/10 overflow-hidden flex items-center justify-center group pointer-events-none">
-             {/* Abstract map representation */}
-             <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/20 via-charcoal-900 to-charcoal-950"></div>
-             
-             <div className="w-full h-full absolute inset-0 z-10 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-700">
-               <ComposableMap
-                 projection="geoAlbers"
-                 projectionConfig={{
-                   scale: 3000,
-                   center: [-2, 54.5],
-                 }}
-                 style={{ width: "100%", height: "100%" }}
-               >
-                 <Geographies geography={geoUrl}>
-                   {({ geographies }) =>
-                     geographies
-                       .filter(geo => geo.properties.name === "United Kingdom")
-                       .map((geo) => (
-                         <Geography
-                           key={geo.rsmKey}
-                         geography={geo}
-                         fill="#1c1c1c"
-                         stroke="#333333"
-                         strokeWidth={0.5}
-                         style={{
-                           default: { outline: "none" },
-                           hover: { outline: "none", fill: "#2a2a2a" },
-                           pressed: { outline: "none" },
-                         }}
-                       />
-                     ))
-                   }
-                 </Geographies>
-                 
-                 {markers.map(({ name, coordinates, isMain }) => (
-                   <Marker key={name} coordinates={coordinates as [number, number]}>
-                     {isMain ? (
-                       <g>
-                         <circle r={6} fill="#b91c1c" className="animate-ping" opacity={0.6} />
-                         <circle r={4} fill="#b91c1c" />
-                         <text
-                           textAnchor="middle"
-                           y={-10}
-                           style={{ fontFamily: "Inter, sans-serif", fill: "#fff", fontSize: "10px", fontWeight: "bold" }}
-                         >
-                           {name}
-                         </text>
-                       </g>
-                     ) : (
-                       <g>
-                         <circle r={2.5} fill="#4b5563" />
-                         <text
-                           textAnchor="middle"
-                           y={-6}
-                           style={{ fontFamily: "Inter, sans-serif", fill: "#9ca3af", fontSize: "8px" }}
-                         >
-                           {name}
-                         </text>
-                       </g>
-                     )}
-                   </Marker>
-                 ))}
-               </ComposableMap>
-             </div>
+             <img 
+               src="" 
+               alt="AI-generated UK coverage map artwork" 
+               className="w-full h-full object-cover rounded-2xl"
+               loading="lazy"
+             />
           </div>
         </div>
       </section>

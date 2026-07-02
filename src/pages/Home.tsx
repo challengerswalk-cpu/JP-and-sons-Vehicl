@@ -144,9 +144,14 @@ export default function Home() {
           </div>
           <div className="lg:w-1/2 w-full">
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-charcoal-800 border border-white/5 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">Image Placeholder</span>
+              <img 
+                src="https://res.cloudinary.com/dhme9ymyd/image/upload/v1783019689/2_Image_xwplfk.webp" 
+                alt="Professional driver checking vehicle"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
+              <div className="absolute bottom-8 left-8 z-10">
                 <p className="text-white font-heading font-bold text-2xl">Professional.</p>
                 <p className="text-gray-300">Fully insured & vetted operators</p>
               </div>
